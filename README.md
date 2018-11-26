@@ -1,0 +1,2 @@
+- 安装字典集合依赖
+    - npm install --save dictionary.ts
