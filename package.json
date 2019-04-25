@@ -1,5 +1,5 @@
 {
-  "name": "koa-ts",
+  "name": "koa2-ts",
   "version": "1.0.0",
   "description": "使用koa2和ts快速构建的脚手架项目",
   "main": "index.js",
