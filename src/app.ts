@@ -1,7 +1,5 @@
 import * as Koa from 'koa';
 
-var {init} = require('./config/sequelizeBase');
-
 //error
 const onerror = require('koa-onerror');
 
@@ -16,9 +14,6 @@ const bodyparser = require('koa-bodyparser');
 
 //json
 const koajson = require('koa-json');
-
-//jwt
-const jwt = require('koa-jwt');
 
 const app = new Koa();
 
@@ -42,14 +37,8 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 });
 
-app.use(jwt({
-  secret: 'jake'
-}).unless({ path: [/^\/api/] }));
-
 //routers
 routers(app);
-
-init();
 
 // error-handling
 app.on('error', (err, ctx) => {
